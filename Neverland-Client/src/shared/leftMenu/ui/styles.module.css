@@ -1,0 +1,95 @@
+.leftMenuContainer {
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+.leftMenu {
+    display: flex;
+    width: 240px;
+    height: 100%;
+    padding: 20px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: #272727;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    width: 100%;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    cursor: default;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s;
+    text-decoration: none;
+    color: #555555;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.button:hover {
+    background: #f0f0f0;
+}
+
+.active {
+    background: #e0f7fa;
+    color: #00796b;
+}
+
+.button img {
+    width: 24px;
+    height: 24px;
+}
+
+.buttonText {
+    margin-left: 12px;
+}
+
+@media (max-width: 768px) {
+    .leftMenu {
+        width: 200px;
+        padding: 15px 10px;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .buttonText {
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,1 @@
+export { ticketPage } from './ui/ticketPage'
