@@ -1,5 +1,16 @@
 import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
 import styles from "../../ticket/ui/styles.module.css";
+import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
+import React from "react";
+
+interface Users {
+    id: number;
+    username: string;
+    rights: string;
+    [key: string]: React.ReactNode | string | number;
+}
+
+
 
 const UsersData = [
     { id: 1, username: 'Сотрудник №1', rights: "Администратор" },
@@ -7,43 +18,21 @@ const UsersData = [
     { id: 3, username: 'Сотрудник №3', rights: "Пользователь"}
 ];
 
+const UsersColumns = [
+    { key: "username", label: "Имя пользователя" },
+    { key: "rights", label: "Права пользователя" },
+];
+
 export const usersPage = () => {
     return (
         <div className="container-neverland">
-        <LeftMenu></LeftMenu>
+            <LeftMenu></LeftMenu>
             <div className={`w-full ${styles.containerRequests}`}>
-                <div className={styles.whiteBlock}>
-                    <div className={styles.headerContainer}>
-                        <p className={styles.requestCount}>Пользователей: {UsersData.length}</p>
-                        <div className={styles.searchContainer}>
-                            <input
-                                type="text"
-                                className={styles.searchInput}
-                                placeholder="Поиск..."
-                            />
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.tableRequests}>
-                    <table className={styles.ticketTable}>
-                        <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>Имя пользователя</th>
-                            <th>Права пользователя</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {UsersData.map((data, index) => (
-                            <tr key={data.id}>
-                                <td>{index + 1}</td>
-                                <td>{data.username}</td>
-                                <td>{data.rights}</td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
-                </div>
+                <TableWithSearch<Users>
+                    data={UsersData}
+                    columns={UsersColumns}
+                    searchExcludeKeys={["id"]}
+                />
             </div>
         </div>
     );

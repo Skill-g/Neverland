@@ -1,7 +1,9 @@
-import {TICKET_ROUTE, HOME_ROUTE, USERS_ROUTE} from "../consts";
-import TicketPage from "../../pages/ticket/ui/ticketPage.tsx";
-import HomePage from "../../pages/home/ui/homePage.tsx";
-import UsersPage from "../../pages/users/ui/usersPage.tsx";
+import {HOME_ROUTE, ORG_ROUTE, STUDENTS_ROUTE, TICKET_ROUTE, USERS_ROUTE} from "../consts";
+import {ticketPage} from "../../pages/ticket";
+import {homePage} from "../../pages/home/";
+import {usersPage} from "../../pages/users";
+import {orgPage} from "../../pages/org";
+import {studentsPage} from "../../pages/students";
 // import AdminPage from "../../pages/admin/ui/adminPage.tsx"; // Предполагаемый компонент админки
 //
 //
@@ -15,21 +17,29 @@ import UsersPage from "../../pages/users/ui/usersPage.tsx";
 export const PubRoutes = [
     {
         path: HOME_ROUTE,
-        Component: HomePage,
+        Component: homePage,
     },
     {
         path: TICKET_ROUTE,
-        Component: TicketPage,
+        Component: ticketPage,
     },
     {
         path: USERS_ROUTE,
-        Component: UsersPage,
+        Component: usersPage,
+    },
+    {
+        path: ORG_ROUTE,
+        Component: orgPage,
+    },
+    {
+        path: STUDENTS_ROUTE,
+        Component: studentsPage
     }
 ];
 
 export const UserRoutes = [
     {
         path: TICKET_ROUTE,
-        Component: TicketPage,
+        Component: ticketPage,
     },
 ];
