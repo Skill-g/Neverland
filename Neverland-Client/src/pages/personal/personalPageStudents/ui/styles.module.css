@@ -1,0 +1,92 @@
+.studentDetailsContainer {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.studentPhoto {
+    margin-right: 20px;
+}
+
+.studentPhoto img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.studentDetails {
+    flex: 1;
+}
+
+.studentDetails h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.studentDetails p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #555;
+}
+
+.studentDetails h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.parentInfo {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #007BFF;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Стили для состояний */
+.loading,
+.error,
+.notFound {
+    padding: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Дополнительные стили для ошибок */
+.error {
+    color: #ff4d4f;
+}
+
+/* Дополнительные стили для состояния "не найдено" */
+.notFound {
+    color: #ff4d4f;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .studentDetailsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .studentPhoto {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .studentPhoto img {
+        width: 150px;
+        height: 150px;
+    }
+}

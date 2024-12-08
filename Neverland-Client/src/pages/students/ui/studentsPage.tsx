@@ -1,37 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../ticket/ui/styles.module.css";
 import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
 import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
+import axios from "axios";
+import { BACKEND_URL } from "../../../app/consts.ts";
+
+interface Parent {
+    fullName: string;
+    contact: string;
+}
 
 interface Student {
     id: number;
-    dob: string;
     fullName: string;
-    certificate: string;
-    tel: string;
-    [key: string]: React.ReactNode | string | number;
+    dateOfBirth: string;
+    idNumber: string;
+    iin: string;
+    phone: string;
+    homeAddress: string;
+    parents: Parent[];
+    cityResidence: string;
+    photo?: string;
 }
 
-const studentsData: Student[] = [
-    { id: 1, dob: '12.12.2024', fullName: 'Иванов Сергей Петрович', certificate: '050008693493', tel: '7705281459' },
-    { id: 2, dob: '13.12.2024', fullName: 'Смирнова Анна Викторовна', certificate: '050008693493', tel: '7705281459' },
-    { id: 3, dob: '14.12.2024', fullName: 'Кузнецова Мария Александровна', certificate: '050008693493', tel: '7705281459' },
-];
+type TableStudent = Pick<Student, 'id' | 'fullName' | 'dateOfBirth' | 'idNumber' | 'iin' | 'phone' | 'homeAddress' | 'cityResidence' | 'photo'>;
 
 const studentColumns = [
-    { key: "fullName", label: "ФИО" },
-    { key: "dob", label: "Дата рождения" },
-    { key: "certificate", label: "Номер удостоверения" },
-    { key: "tel", label: "Номер телефона" },
+    { key: 'fullName', label: 'ФИО' },
+    { key: 'dateOfBirth', label: 'Дата рождения' },
+    { key: 'idNumber', label: 'Номер удостоверения' },
+    { key: 'iin', label: 'ИИН' },
+    { key: 'phone', label: 'Номер телефона' },
 ];
 
 export const studentsPage: React.FC = () => {
+    const [students, setStudents] = useState<Student[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchStudents = async () => {
+            try {
+                const response = await axios.get<Student[]>(`${BACKEND_URL}/api/students/`);
+                setStudents(response.data);
+            } catch {
+                setError("Не удалось загрузить данные студентов.");
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchStudents();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="container-neverland">
+                <LeftMenu />
+                <div className={`w-full ${styles.containerRequests}`}>
+                    <p className="flex text-center w-full justify-center mt-12">Загрузка...</p>
+                </div>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="container-neverland">
+                <LeftMenu />
+                <div className={`w-full ${styles.containerRequests}`}>
+                    <p className="flex text-center w-full justify-center mt-12">{error}</p>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <div className="container-neverland">
             <LeftMenu />
             <div className={`w-full ${styles.containerRequests}`}>
-                <TableWithSearch<Student>
-                    data={studentsData}
+                <TableWithSearch<TableStudent>
+                    data={students}
                     columns={studentColumns}
                     searchExcludeKeys={["id"]}
                 />

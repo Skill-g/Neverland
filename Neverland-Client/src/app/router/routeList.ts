@@ -1,18 +1,10 @@
-import {HOME_ROUTE, ORG_ROUTE, STUDENTS_ROUTE, TICKET_ROUTE, USERS_ROUTE} from "../consts";
+import {HOME_ROUTE, ORG_ROUTE, PERSONALSTUDENTS_ROUTE, STUDENTS_ROUTE, TICKET_ROUTE, USERS_ROUTE} from "../consts";
 import {ticketPage} from "../../pages/ticket";
 import {homePage} from "../../pages/home/";
 import {usersPage} from "../../pages/users";
 import {orgPage} from "../../pages/org";
 import {studentsPage} from "../../pages/students";
-// import AdminPage from "../../pages/admin/ui/adminPage.tsx"; // Предполагаемый компонент админки
-//
-//
-// export const AuthRoutes = [
-//     {
-//         path: ADMIN_ROUTE,
-//         Component: AdminPage, // Убедитесь, что компонент AdminPage существует
-//     },
-// ];
+import {personalPageStudents} from "../../pages/personal/personalPageStudents";
 
 export const PubRoutes = [
     {
@@ -34,7 +26,12 @@ export const PubRoutes = [
     {
         path: STUDENTS_ROUTE,
         Component: studentsPage
+    },
+    {
+        path: PERSONALSTUDENTS_ROUTE,
+        Component: personalPageStudents,
     }
+
 ];
 
 export const UserRoutes = [

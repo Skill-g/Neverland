@@ -1,5 +1,5 @@
-
 import React, { useState, useMemo } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
 import useDebounce from "../../hooks/useDebounce.tsx";
 
@@ -11,8 +11,8 @@ interface Column {
 interface TableWithSearchProps<T> {
     data: T[];
     columns: Column[];
-    searchExcludeKeys?: string[]; // Поля, которые не участвуют в поиске
-    searchableKeys?: string[]; // Поля, по которым выполняется поиск
+    searchExcludeKeys?: string[];
+    searchableKeys?: string[];
 }
 
 const TableWithSearch = <T extends { id: number; [key: string]: React.ReactNode | string | number }>({
@@ -23,6 +23,7 @@ const TableWithSearch = <T extends { id: number; [key: string]: React.ReactNode 
                                                                                                      }: TableWithSearchProps<T>) => {
     const [searchTerm, setSearchTerm] = useState("");
     const debouncedSearchTerm = useDebounce(searchTerm, 300);
+    const navigate = useNavigate();
 
     const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
@@ -30,10 +31,8 @@ const TableWithSearch = <T extends { id: number; [key: string]: React.ReactNode 
 
     const filteredData = useMemo(() => {
         if (!debouncedSearchTerm) return data;
-
         const lowerSearch = debouncedSearchTerm.toLowerCase();
         const keysToSearch = searchableKeys || Object.keys(data[0] || {}).filter(key => !searchExcludeKeys.includes(key));
-
         return data.filter((item) =>
             keysToSearch.some(
                 (key) =>
@@ -75,7 +74,12 @@ const TableWithSearch = <T extends { id: number; [key: string]: React.ReactNode 
                                 <td key={column.key}>{item[column.key as keyof T]}</td>
                             ))}
                             <td>
-                                <button className={styles.viewButton}>Посмотреть</button>
+                                <button
+                                    className={styles.viewButton}
+                                    onClick={() => navigate(`/personalstudents/${item.id}`)}
+                                >
+                                    Посмотреть
+                                </button>
                             </td>
                         </tr>
                     ))}
