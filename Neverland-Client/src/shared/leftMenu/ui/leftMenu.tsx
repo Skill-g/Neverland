@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from "./styles.module.css";
-import {ORG_ROUTE, siteName, TICKET_ROUTE, USERS_ROUTE} from "../../../app/consts.ts";
+import {ORG_ROUTE, PROFILE_ROUTE, siteName, TICKET_ROUTE, USERS_ROUTE} from "../../../app/consts.ts";
 
 const username = "Дмитрий Е."
 const rights = "Администратор"
@@ -53,7 +53,7 @@ export const leftMenu = () => {
                 </div>
                 <div className={styles.user}>
                     <div className={styles.profile}>
-                    <img src="/pictures/avatar.svg" alt="Аватар" className={styles.avatar}/>
+                        <a href={PROFILE_ROUTE}> <img src="/pictures/avatar.svg" alt="Аватар" className={styles.avatar}/> </a>
                     <div className={styles.userData}>
                         <p>{username}</p>
                         <p>{rights}</p>

@@ -1,10 +1,20 @@
-import {HOME_ROUTE, ORG_ROUTE, PERSONALSTUDENTS_ROUTE, STUDENTS_ROUTE, TICKET_ROUTE, USERS_ROUTE} from "../consts";
-import {ticketPage} from "../../pages/ticket";
+import {
+    HOME_ROUTE,
+    ORG_ROUTE,
+    PERSONALSTUDENTS_ROUTE,
+    PROFILE_ROUTE,
+    STUDENTS_ROUTE,
+    TICKET_ROUTE, TICKETCREATE_ROUTE,
+    USERS_ROUTE
+} from "../consts";
+import {ticketPage} from "../../pages/ticket/ticket";
 import {homePage} from "../../pages/home/";
 import {usersPage} from "../../pages/users";
 import {orgPage} from "../../pages/org";
 import {studentsPage} from "../../pages/students";
 import {personalPageStudents} from "../../pages/personal/personalPageStudents";
+import {profilePage} from "../../pages/profile";
+import {ticketCreatePage} from "../../pages/ticket/ticketCreate";
 
 export const PubRoutes = [
     {
@@ -30,6 +40,14 @@ export const PubRoutes = [
     {
         path: PERSONALSTUDENTS_ROUTE,
         Component: personalPageStudents,
+    },
+    {
+        path: PROFILE_ROUTE,
+        Component: profilePage,
+    },
+    {
+        path: TICKETCREATE_ROUTE,
+        Component: ticketCreatePage,
     }
 
 ];

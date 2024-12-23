@@ -1,0 +1,92 @@
+/* === Variables === */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --button-color: #4a90e2;
+    --button-hover-color: #357abd;
+    --border-radius: 8px;
+    --font-family: 'Inter', sans-serif;
+}
+
+/* === General Styles === */
+.profileContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    font-family: var(--font-family);
+}
+
+/* === Profile Card === */
+.profileCard {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* === Profile ID === */
+.profileId {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* === Profile Image === */
+.profileImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 4px solid var(--primary-color);
+}
+
+/* === Profile Name === */
+.profileName {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+/* === Profile Position === */
+.profilePosition {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* === Profile Bio === */
+.profileBio {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+/* === Profile Button === */
+.profileButton {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profileButton:hover {
+    background-color: var(--button-hover-color);
+}

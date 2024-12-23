@@ -1,1 +1,1 @@
-export { studentsPage } from './ui/studentsPage'
+export { studentsPage } from './ui/studentsPage.tsx'

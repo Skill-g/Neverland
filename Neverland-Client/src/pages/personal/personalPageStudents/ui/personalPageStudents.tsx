@@ -86,4 +86,3 @@ export const personalPageStudents: React.FC = () => {
     );
 };
 
-export default personalPageStudents;

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
-import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
-import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
+import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
+import TableWithSearch from "../../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 
 interface Ticket {
     id: number;

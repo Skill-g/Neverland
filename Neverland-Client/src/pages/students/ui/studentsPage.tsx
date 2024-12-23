@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "../../ticket/ui/styles.module.css";
+import styles from "../../ticket/ticket/ui/styles.module.css";
 import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
 import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 import axios from "axios";
@@ -87,5 +87,3 @@ export const studentsPage: React.FC = () => {
         </div>
     );
 };
-
-export default studentsPage;

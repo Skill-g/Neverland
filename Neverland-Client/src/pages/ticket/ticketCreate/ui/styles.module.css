@@ -1,0 +1,89 @@
+/* === Variables === */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f4f4f4;
+    --text-color: #333;
+    --button-color: #4a90e2;
+    --button-hover-color: #357abd;
+    --border-radius: 8px;
+    --font-family: 'Inter'. serif;
+}
+
+
+
+/* === Container === */
+.ticketContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    font-family: var(--font-family);
+}
+
+/* === Title === */
+.ticketTitle {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+/* === Form === */
+.ticketForm {
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* === Form Group === */
+.formGroup {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* === Label === */
+.formLabel {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* === Select Field === */
+.formSelect {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+/* === Input Field === */
+.formInput {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+/* === Button === */
+.formButton {
+    margin-top: 1rem;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formButton:hover {
+    background-color: var(--button-hover-color);
+}
