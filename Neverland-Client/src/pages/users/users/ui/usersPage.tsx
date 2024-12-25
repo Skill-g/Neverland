@@ -2,6 +2,7 @@ import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
 import styles from "../../../ticket/ticket/ui/styles.module.css";
 import TableWithSearch from "../../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 import React from "react";
+import {ORGPROFILEPAGE_ROUTE, PERSONALUSER_ROUTE} from "../../../../app/consts.ts";
 
 interface Users {
     id: number;
@@ -32,6 +33,9 @@ export const usersPage = () => {
                     data={UsersData}
                     columns={UsersColumns}
                     searchExcludeKeys={["id"]}
+                    viewRoute={(id) => `${PERSONALUSER_ROUTE}`}
+                    editRoute={(id) => `/orgEditPage/${id}`}
+                    deleteRoute={(id) => `/orgDeletePage/${id}`}
                 />
             </div>
         </div>

@@ -2,6 +2,7 @@ import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
 import styles from "../../../ticket/ticket/ui/styles.module.css";
 import TableWithSearch from "../../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 import React from "react";
+import {ORGPROFILEPAGE_ROUTE} from "../../../../app/consts.ts";
 
 interface organization {
     id: number;
@@ -31,6 +32,9 @@ export const orgPage = () => {
                     data={OrgData}
                     columns={organizaionColumns}
                     searchExcludeKeys={["id"]}
+                    viewRoute={(id) => `${ORGPROFILEPAGE_ROUTE}`}
+                    editRoute={(id) => `/orgEditPage/${id}`}
+                    deleteRoute={(id) => `/orgDeletePage/${id}`}
                 />
             </div>
         </div>

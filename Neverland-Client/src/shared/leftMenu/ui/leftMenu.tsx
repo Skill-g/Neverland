@@ -5,12 +5,12 @@ import {
     ORG_ROUTE,
     PROFILE_ROUTE,
     siteName,
-    STATISTIC_ROUTE,
+    STATISTIC_ROUTE, STUDENTS_ROUTE,
     TICKET_ROUTE,
     USERS_ROUTE
 } from "../../../app/consts.ts";
 
-const username = "Дмитрий Е."
+const username = "Иванов И."
 const rights = "Администратор"
 
 export const leftMenu = () => {
@@ -28,8 +28,8 @@ export const leftMenu = () => {
                             isActive ? `${styles.button} ${styles.active}` : styles.button
                         }
                     >
-                        <img src="/pictures/notepad-text.svg" alt="Заявки"/>
-                        <span className={styles.buttonText}>Заявки</span>
+                        <img src="/pictures/notepad-text.svg" alt="Нарушения"/>
+                        <span className={styles.buttonText}>Нарушения</span>
                     </NavLink>
                     <NavLink
                         to={ORG_ROUTE}
@@ -41,7 +41,7 @@ export const leftMenu = () => {
                         <span className={styles.buttonText}>Организации</span>
                     </NavLink>
                     <NavLink
-                        to="/students"
+                        to={STUDENTS_ROUTE}
                         className={({isActive}) =>
                             isActive ? `${styles.button} ${styles.active}` : styles.button
                         }

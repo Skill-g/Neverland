@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.css";
 import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
 import TableWithSearch from "../../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
+import {ORGPROFILEPAGE_ROUTE, PERSONALTICKET_ROUTE} from "../../../../app/consts.ts";
 
 interface Ticket {
     id: number;
@@ -34,6 +35,9 @@ export const ticketPage: React.FC = () => {
                     data={ticketData}
                     columns={ticketColumns}
                     searchExcludeKeys={["id"]}
+                    viewRoute={(id) => `${PERSONALTICKET_ROUTE}`}
+                    editRoute={(id) => `/orgEditPage/${id}`}
+                    deleteRoute={(id) => `/orgDeletePage/${id}`}
                 />
             </div>
         </div>

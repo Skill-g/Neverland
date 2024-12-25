@@ -1,0 +1,1 @@
+export { personalPageTicket } from './ui/pesonalPageTickets'

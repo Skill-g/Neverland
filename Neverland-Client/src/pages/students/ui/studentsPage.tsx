@@ -3,7 +3,7 @@ import styles from "../../ticket/ticket/ui/styles.module.css";
 import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
 import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 import axios from "axios";
-import { BACKEND_URL } from "../../../app/consts.ts";
+import {BACKEND_URL, ORGPROFILEPAGE_ROUTE, PERSONALSTUDENTS_ROUTE} from "../../../app/consts.ts";
 
 interface Parent {
     fullName: string;
@@ -82,6 +82,9 @@ export const studentsPage: React.FC = () => {
                     data={students}
                     columns={studentColumns}
                     searchExcludeKeys={["id"]}
+                    viewRoute={(id) => `${PERSONALSTUDENTS_ROUTE}`}
+                    editRoute={(id) => `/orgEditPage/${id}`}
+                    deleteRoute={(id) => `/orgDeletePage/${id}`}
                 />
             </div>
         </div>

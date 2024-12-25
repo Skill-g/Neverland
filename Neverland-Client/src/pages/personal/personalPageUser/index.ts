@@ -1,0 +1,1 @@
+export { personalPageUser } from "./ui/personalPageUser"

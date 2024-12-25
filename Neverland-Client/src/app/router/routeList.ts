@@ -1,8 +1,8 @@
 import {
-    ADMIN_ROUTE,
+    ADMIN_ROUTE, CREATESTUDENT_ROUTE,
     HOME_ROUTE,
     ORG_ROUTE, ORGCREATE_ROUTE, ORGPROFILEPAGE_ROUTE,
-    PERSONALSTUDENTS_ROUTE,
+    PERSONALSTUDENTS_ROUTE, PERSONALTICKET_ROUTE, PERSONALUSER_ROUTE,
     PROFILE_ROUTE, STATISTIC_ROUTE,
     STUDENTS_ROUTE,
     TICKET_ROUTE, TICKETCREATE_ROUTE, USERCREATE_ROUTE,
@@ -21,6 +21,9 @@ import {createOrgPage} from "../../pages/org/createOrg";
 import {adminPage} from "../../pages/admin";
 import {createUserPage} from "../../pages/users/createUser";
 import {statisticPage} from "../../pages/statistic";
+import {personalPageUser} from "../../pages/personal/personalPageUser";
+import {personalPageTicket} from "../../pages/personal/personalPageTickets";
+import {createStudentPage} from "../../pages/students/createStudent";
 
 export const PubRoutes = [
     {
@@ -74,6 +77,18 @@ export const PubRoutes = [
     {
         path: STATISTIC_ROUTE,
         Component: statisticPage,
+    },
+    {
+        path: PERSONALUSER_ROUTE,
+        Component: personalPageUser,
+    },
+    {
+        path: PERSONALTICKET_ROUTE,
+        Component: personalPageTicket,
+    },
+    {
+        path: CREATESTUDENT_ROUTE,
+        Component: createStudentPage,
     }
 ];
 
