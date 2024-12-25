@@ -1,6 +1,6 @@
-import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
-import styles from "../../ticket/ticket/ui/styles.module.css";
-import TableWithSearch from "../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
+import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
+import styles from "../../../ticket/ticket/ui/styles.module.css";
+import TableWithSearch from "../../../../shared/tableWithSearch/ui/tableWithSearch.tsx";
 import React from "react";
 
 interface Users {

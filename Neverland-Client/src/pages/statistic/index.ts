@@ -1,0 +1,1 @@
+export { statisticPage } from './ui/statisticPage'

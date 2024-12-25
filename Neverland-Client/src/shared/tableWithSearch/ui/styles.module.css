@@ -73,6 +73,32 @@
     background-color: #40589a;
 }
 
+.changeButton {
+    padding: 5px 10px;
+    background-color: #32ce4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changeButton:hover {
+    background-color: #16ad2f;
+}
+
+.deleteButton {
+    padding: 5px 10px;
+    background-color: #ce3232;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    background-color: #a12828;
+}
+
 .headerContainer {
     display: flex;
     justify-content: space-between;

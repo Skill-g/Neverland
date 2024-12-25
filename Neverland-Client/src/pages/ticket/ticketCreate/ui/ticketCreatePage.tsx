@@ -1,7 +1,10 @@
 import styles from './styles.module.css';
+import LeftMenu from "../../../../shared/leftMenu/ui/leftMenu.tsx";
 
 export const ticketCreatePage = () => {
     return (
+        <div className="container-neverland">
+            <LeftMenu></LeftMenu>
         <div className={styles.ticketContainer}>
             <h1 className={styles.ticketTitle}>Создание Тикета</h1>
             <form className={styles.ticketForm}>
@@ -40,6 +43,7 @@ export const ticketCreatePage = () => {
                 {/* Кнопка создания тикета */}
                 <button type="submit" className={styles.formButton}>Создать тикет</button>
             </form>
+        </div>
         </div>
     );
 };

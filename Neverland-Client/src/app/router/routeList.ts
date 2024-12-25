@@ -1,20 +1,26 @@
 import {
+    ADMIN_ROUTE,
     HOME_ROUTE,
-    ORG_ROUTE,
+    ORG_ROUTE, ORGCREATE_ROUTE, ORGPROFILEPAGE_ROUTE,
     PERSONALSTUDENTS_ROUTE,
-    PROFILE_ROUTE,
+    PROFILE_ROUTE, STATISTIC_ROUTE,
     STUDENTS_ROUTE,
-    TICKET_ROUTE, TICKETCREATE_ROUTE,
+    TICKET_ROUTE, TICKETCREATE_ROUTE, USERCREATE_ROUTE,
     USERS_ROUTE
 } from "../consts";
 import {ticketPage} from "../../pages/ticket/ticket";
 import {homePage} from "../../pages/home/";
-import {usersPage} from "../../pages/users";
-import {orgPage} from "../../pages/org";
+import {usersPage} from "../../pages/users/users";
+import {orgPage} from "../../pages/org/org";
 import {studentsPage} from "../../pages/students";
 import {personalPageStudents} from "../../pages/personal/personalPageStudents";
 import {profilePage} from "../../pages/profile";
 import {ticketCreatePage} from "../../pages/ticket/ticketCreate";
+import {personalPageOrg} from "../../pages/personal/personalPageOrg";
+import {createOrgPage} from "../../pages/org/createOrg";
+import {adminPage} from "../../pages/admin";
+import {createUserPage} from "../../pages/users/createUser";
+import {statisticPage} from "../../pages/statistic";
 
 export const PubRoutes = [
     {
@@ -48,8 +54,27 @@ export const PubRoutes = [
     {
         path: TICKETCREATE_ROUTE,
         Component: ticketCreatePage,
+    },
+    {
+        path: ORGPROFILEPAGE_ROUTE,
+        Component: personalPageOrg,
+    },
+    {
+        path: ORGCREATE_ROUTE,
+        Component: createOrgPage,
+    },
+    {
+        path: ADMIN_ROUTE,
+        Component: adminPage,
+    },
+    {
+      path: USERCREATE_ROUTE,
+      Component: createUserPage,
+    },
+    {
+        path: STATISTIC_ROUTE,
+        Component: statisticPage,
     }
-
 ];
 
 export const UserRoutes = [

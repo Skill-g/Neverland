@@ -1,0 +1,34 @@
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.buttons button {
+    border: none;
+
+}
+
+.button {
+    background: #0B83F3;
+    border-radius: 15px;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    transition: 500ms;
+    font-family: 'Inter', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button:hover {
+    background: #177ad9;
+    transition: 500ms;
+}

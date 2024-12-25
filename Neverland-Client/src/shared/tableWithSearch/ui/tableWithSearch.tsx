@@ -68,17 +68,29 @@ const TableWithSearch = <T extends { id: number; [key: string]: React.ReactNode 
                     </thead>
                     <tbody>
                     {filteredData.map((item, index) => (
-                        <tr key={item.id}>
+                        <tr  key={item.id}>
                             <td>{index + 1}</td>
                             {columns.map((column) => (
                                 <td key={column.key}>{item[column.key as keyof T]}</td>
                             ))}
-                            <td>
+                            <td className="gap-5 flex">
                                 <button
                                     className={styles.viewButton}
                                     onClick={() => navigate(`/personalstudents/${item.id}`)}
                                 >
                                     Посмотреть
+                                </button>
+                                <button
+                                    className={styles.changeButton}
+                                    onClick={() => navigate(`/personalstudents/${item.id}`)}
+                                >
+                                    Изменить
+                                </button>
+                                <button
+                                    className={styles.deleteButton}
+                                    onClick={() => navigate(`/personalstudents/${item.id}`)}
+                                >
+                                    Удалить
                                 </button>
                             </td>
                         </tr>

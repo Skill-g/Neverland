@@ -1,1 +1,0 @@
-export { orgPage } from './ui/orgPage'

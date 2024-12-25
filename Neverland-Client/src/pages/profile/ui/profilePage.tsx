@@ -1,5 +1,5 @@
 import styles from './styles.module.css';
-
+import LeftMenu from "../../../shared/leftMenu/ui/leftMenu.tsx";
 const id:number = 1
 const fullName:string = "Иван Иванов Иванович"
 const post:string = "Администратор"
@@ -7,6 +7,8 @@ const descriptionProfile:string = "Описание пользователя"
 
 export const profilePage = () => {
     return (
+        <div className="container-neverland">
+            <LeftMenu></LeftMenu>
         <div className={styles.profileContainer}>
 
             <div className={styles.profileCard}>
@@ -22,6 +24,7 @@ export const profilePage = () => {
                     {descriptionProfile}
                 </p>
             </div>
+        </div>
         </div>
     );
 };
