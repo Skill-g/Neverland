@@ -36,10 +36,10 @@ export const statisticPage: React.FC = () => {
     // Пример данных для графиков
 
     const pieData = {
-        labels: ['Опоздание', 'Неуважение', 'Отсутствие', 'Другие'],
+        labels: ['Опоздание', 'Хулиганство', 'Отсутствие', 'Другие'],
         datasets: [
             {
-                label: '# Нарушений',
+                label: 'Нарушений',
                 data: [12, 19, 3, 5],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)',  // Опоздание
@@ -75,7 +75,7 @@ export const statisticPage: React.FC = () => {
         labels: ['Организация А', 'Организация Б', 'Организация В', 'Организация Г'],
         datasets: [
             {
-                label: '# Нарушений',
+                label: 'Нарушений',
                 data: [15, 10, 8, 12],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)', // Организация А
