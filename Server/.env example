@@ -1,0 +1,2 @@
+DATABASE_URL="postgresql://skill:skill:@localhost:5432/neverland?schema=public"
+JWT_SECRET="tytytatahello"
